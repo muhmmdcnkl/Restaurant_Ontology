@@ -1,0 +1,926 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rest="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#assists -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#assists">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isAssistedBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cooking_Assistant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Sous_Chef"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Chef"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cooked -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cooked">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isCookedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cooks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cooks">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isMadeBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#delivers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#delivers">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isDeliveredBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#drinks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#drinks">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isDrunkBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#eats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#eats">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isEatenBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isAssistedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isAssistedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Chef"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cooking_Assistant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Sous_Chef"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isCookedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isCookedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isDeliveredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isDeliveredBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isDrunkBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isDrunkBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isEatenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isEatenBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isMadeBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isMadeUpOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isMadeUpOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isNeededFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isManagedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#manages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isNeededFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isNeededFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isOrderedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isOrderedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#orders"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isPreparedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isPreparedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#prepares"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Bartender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isSuppliedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isSuppliedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#supplies"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Supplier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isWaitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isWaitedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#waits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#manages">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Manager"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#orders -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#orders">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#prepares -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#prepares">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Bartender"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#seats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#seats">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#sitsAt"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#sitsAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#sitsAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#supplies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#supplies">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Supplier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#waits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#waits">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasCalories -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasCalories">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasCost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasExpiry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasExpiry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasLoggedHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasLoggedHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasSalary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasSeatingCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasSeatingCapacity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasVolume -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#hasVolume">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Alcoholic_Beverage"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive>0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive>100.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isAboveDrinkingAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#isAboveDrinkingAge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Alcoholic_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Alcoholic_Beverage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Non-Alcoholic_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Aperitif -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Aperitif">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Bartender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Bartender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Chef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Chef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cooking_Assistant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cooking_Assistant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Dessert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Dessert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Main -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Main">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Non-Alcoholic_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Non-Alcoholic_Beverage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Alcoholic_Beverage"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Drink_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Owner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Side -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Side">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Sous_Chef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Sous_Chef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cook"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Supplier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Supplier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#baked_potato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#baked_potato">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Side"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.8</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#bobby -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#bobby">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cooking_Assistant"/>
+        <assists rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#dave"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasLoggedHours>
+        <hasName>Bobby</hasName>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Dessert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#carl -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#carl">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Bartender"/>
+        <prepares rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#wine"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#dave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#dave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Chef"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#escargot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#escargot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Aperitif"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#farmer_steve -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#farmer_steve">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Supplier"/>
+        <supplies rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#raw_beef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#george_michael -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#george_michael">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Manager"/>
+        <manages rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#carl"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#ice_tea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#ice_tea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Non-Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#jeff -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#jeff">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+        <drinks rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#wine"/>
+        <eats rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#escargot"/>
+        <orders rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#steak"/>
+        <sitsAt rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#orange_juice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#orange_juice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Non-Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#owner_mcownerface -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#owner_mcownerface">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#pepsi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#pepsi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Non-Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">13.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#raw_beef -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#raw_beef">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+        <isCookedBy rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#jeff"/>
+        <hasCost rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.1</hasCost>
+        <hasExpiry rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"></hasExpiry>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#steak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#steak">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Main"/>
+        <isMadeUpOf rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#raw_beef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#sue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#sue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Sous_Chef"/>
+        <assists rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#dave"/>
+        <cooks rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#escargot"/>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasSalary>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#wally -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#wally">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Waiter"/>
+        <delivers rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#cake"/>
+        <waits rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#table_1"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#wine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#wine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Alcoholic_Beverage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Aperitif"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Dessert"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Main"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Side"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Chef"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Cooking_Assistant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Sous_Chef"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Customer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Employee"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Owner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Supplier"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Ingredients"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Menu_Item"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#People"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wilhelm/ontologies/2017/2/untitled-ontology-6#Table"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
