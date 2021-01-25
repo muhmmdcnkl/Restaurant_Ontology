@@ -1,0 +1,928 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/restaurant_ontology#"
+     xml:base="http://www.semanticweb.org/restaurant_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rest="http://www.semanticweb.org/restaurant_ontology">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/restaurant_ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#assists -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#assists">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isAssistedBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Cooking_Assistant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Sous_Chef"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Chef"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#cooked -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#cooked">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isCookedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#cooks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#cooks">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isMadeBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#delivers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#delivers">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isDeliveredBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Waiter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#drinks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#drinks">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isDrunkBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#eats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#eats">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isEatenBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isAssistedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isAssistedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Chef"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Cooking_Assistant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Sous_Chef"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isCookedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isCookedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isDeliveredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isDeliveredBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Waiter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isDrunkBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isDrunkBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isEatenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isEatenBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isMadeBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isMadeUpOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isMadeUpOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#isNeededFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isManagedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#manages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isNeededFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isNeededFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isOrderedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isOrderedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#orders"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isPreparedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isPreparedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#prepares"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Bartender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isSuppliedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isSuppliedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#supplies"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Supplier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isWaitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isWaitedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#waits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Waiter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#manages">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Manager"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#orders -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#orders">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#prepares -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#prepares">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Bartender"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#seats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#seats">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#sitsAt"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#sitsAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#sitsAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#supplies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#supplies">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Supplier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#waits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#waits">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Waiter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasCalories -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasCalories">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasCost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasExpiry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasExpiry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasLoggedHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasLoggedHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#People"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasSalary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasSeatingCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasSeatingCapacity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#hasVolume -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#hasVolume">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Alcoholic_Beverage"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive>0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive>100.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#isAboveDrinkingAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/restaurant_ontology#isAboveDrinkingAge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Alcoholic_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Alcoholic_Beverage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/restaurant_ontology#Non-Alcoholic_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Aperitif -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Aperitif">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Bartender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Bartender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Chef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Chef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Cook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Cook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Cooking_Assistant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Cooking_Assistant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Customer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Customer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Dessert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Dessert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Employee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Employee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Ingredients -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Main -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Main">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Menu_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Non-Alcoholic_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Non-Alcoholic_Beverage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Alcoholic_Beverage"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Drink_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Owner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#People -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#People"/>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Side -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Side">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Food_Menu_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Sous_Chef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Sous_Chef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cook"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Supplier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Supplier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Table -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Table"/>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#Waiter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/restaurant_ontology#Waiter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#baked_potato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#baked_potato">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Side"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.8</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#bobby -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#bobby">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Cooking_Assistant"/>
+        <assists rdf:resource="http://www.semanticweb.org/restaurant_ontology#dave"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasLoggedHours>
+        <hasName>Bobby</hasName>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#cake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#cake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Dessert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#carl -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#carl">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Bartender"/>
+        <prepares rdf:resource="http://www.semanticweb.org/restaurant_ontology#wine"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#dave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#dave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Chef"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#escargot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#escargot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Aperitif"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#farmer_steve -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#farmer_steve">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Supplier"/>
+        <supplies rdf:resource="http://www.semanticweb.org/restaurant_ontology#raw_beef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#george_michael -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#george_michael">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Manager"/>
+        <manages rdf:resource="http://www.semanticweb.org/restaurant_ontology#carl"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#ice_tea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#ice_tea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Non-Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#jeff -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#jeff">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+        <drinks rdf:resource="http://www.semanticweb.org/restaurant_ontology#wine"/>
+        <eats rdf:resource="http://www.semanticweb.org/restaurant_ontology#escargot"/>
+        <orders rdf:resource="http://www.semanticweb.org/restaurant_ontology#steak"/>
+        <sitsAt rdf:resource="http://www.semanticweb.org/restaurant_ontology#table_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#orange_juice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#orange_juice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Non-Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#owner_mcownerface -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#owner_mcownerface">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#pepsi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#pepsi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Non-Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">13.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#raw_beef -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#raw_beef">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+        <isCookedBy rdf:resource="http://www.semanticweb.org/restaurant_ontology#jeff"/>
+        <hasCost rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.1</hasCost>
+        <hasExpiry rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"></hasExpiry>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#steak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#steak">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Main"/>
+        <isMadeUpOf rdf:resource="http://www.semanticweb.org/restaurant_ontology#raw_beef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#sue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#sue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Sous_Chef"/>
+        <assists rdf:resource="http://www.semanticweb.org/restaurant_ontology#dave"/>
+        <cooks rdf:resource="http://www.semanticweb.org/restaurant_ontology#escargot"/>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasSalary>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#table_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#table_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#table_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#table_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#table_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#table_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#table_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#table_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#table_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#table_5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        <hasSeatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasSeatingCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#wally -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#wally">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Waiter"/>
+        <delivers rdf:resource="http://www.semanticweb.org/restaurant_ontology#cake"/>
+        <waits rdf:resource="http://www.semanticweb.org/restaurant_ontology#table_1"/>
+        <hasLoggedHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</hasLoggedHours>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</hasSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/restaurant_ontology#wine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/restaurant_ontology#wine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/restaurant_ontology#Alcoholic_Beverage"/>
+        <hasCalories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</hasCalories>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Aperitif"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Dessert"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Main"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Side"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Chef"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Cooking_Assistant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Sous_Chef"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Customer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Employee"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Owner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Supplier"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Ingredients"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Menu_Item"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#People"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/restaurant_ontology#Table"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
